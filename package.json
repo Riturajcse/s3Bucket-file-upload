@@ -1,0 +1,19 @@
+{
+  "name": "s3Bucket",
+  "version": "1.0.0",
+  "description": "s3Bucket file upload",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rituraj",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.0",
+    "aws-sdk": "^2.154.0",
+    "body-parser": "^1.18.2",
+    "connect-multiparty": "^2.1.0",
+    "express": "^4.15.4",
+    "path": "^0.12.7"
+  }
+}

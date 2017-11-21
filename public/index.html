@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>
+s3Bucket file upload.
+</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script type="text/javascript" src="controller.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+	<h2>S3 bucket application</h2>
+	<form action="/api/upload" method="post" enctype="multipart/form-data">
+	    <input type="file" name="file">
+	    <input type="submit" value="Upload">
+    </form>
+	<section ng-if="loading">
+		Loading images from s3
+	</section>
+	<section ng-if="!loading && allImages.length != 0">
+		Found {{allImages.length}} images.
+	</section>
+	<section ng-if="!loading && allImages.length != 0">
+		<img ng-src="{{s3Url}}{{image.Key}}" width="200px" height="200px" ng-repeat="image in allImages">
+	</section>
+	<section ng-if="!loading && !allImages.length">
+		No Images found!
+	</section>
+
+</body>
+</html>
