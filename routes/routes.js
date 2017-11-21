@@ -26,8 +26,8 @@ router.get('/images', function(req, res, next) {
 });
 
 router.post('/upload', multipartMiddleware, function(req, res, next) {
-	var tmp_path = req.files.file.path;
- 	image = fs.createReadStream(tmp_path);
+    var tmp_path = req.files.file.path;
+    image = fs.createReadStream(tmp_path);
     imageName = req.files.file.name;
     async.series([
         createS3Bucket,
